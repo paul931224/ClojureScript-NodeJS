@@ -8,7 +8,7 @@
   [:div [:a {:href "/"} "Home Page"]
    [:span {:style {:padding "5px"}}]
    [:a {:href "/page-one"} "Page One"]
-   [:span {:style {:padding "5px"}}]
+   [:span {:style {:padding "5px"}}] 
    [:a {:href "#" :on-click #(js/alert "HEY, I WORK!!")} "Say Hello"]])
 
 (defn home-page []

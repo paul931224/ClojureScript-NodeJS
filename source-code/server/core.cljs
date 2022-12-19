@@ -12,7 +12,7 @@
 
 (def hello-text "Hello there D3V!")
 
-(def products [{:name "Neuralink"
+(def products [{:name "Neura  link"
                 :price 10000}
                {:name "Tesla"
                 :price 30000}])
@@ -40,22 +40,20 @@
   (.get app route handler))
 
 (defn start-server []
-  (println "Starting server")
   (let [app (express)]
     (doseq [[route handler] router]
-      (println route)
       (generate-get-route app route handler))
     (.use app (express/static "public"))
-    (.listen app port   (fn [] (println "Example app listening on port " port)))))
+    (.listen app port   
+             (fn [] (println "Port: " port)))))
  
 
-(defn ^:dev/before-load stop! []
-  (println "Before code updated")
-  (when @server (.close @server)))
+(defn ^:dev/before-load stop! []  
+  (when @server (.close @server))) 
   
 
 (defn ^:dev/after-load start! []
-  (println "After code updated")
+  (println "Code updated.")
   (reset! server (start-server)))
 
 

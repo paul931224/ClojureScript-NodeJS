@@ -12,3 +12,5 @@ node-target
 resources/public/js/cljs-runtime
 resources/public/js
 public/js
+.cpcache
+.DS_Store

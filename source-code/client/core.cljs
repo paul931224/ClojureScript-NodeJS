@@ -7,10 +7,10 @@
 
 
 (enable-console-print!)
-
+ 
 
 (defn start-client! []
-  (println "Omg mate it's working")
+  (println "Omg mate it's working") 
   (rdom/render [app/view] (.getElementById js/document "app")))
 
 (pushy/push-state! secretary/dispatch!
