@@ -8,3 +8,6 @@ package-lock.json
 .clj-kondo
 .lsp
 .calva
+node-target
+resources/public/js/cljs-runtime
+resources/public/js

@@ -1,5 +1,5 @@
 
-(ns server.main
+(ns server.core
   (:require ["express" :as express]))
 
 
@@ -41,6 +41,9 @@
   (println "Code updated after.")
   (reset! server (start-server)))
 
-(defn main! []
-  (println "App loaded!")
+
+(defn start-server! []
+  (println "Omg mate it's working")
   (start!))
+
+  

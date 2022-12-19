@@ -1,6 +1,9 @@
 
 {:source-paths ["src"]
  :dependencies []
- :builds {:app {:target :node-script
-                :output-to "target/main.js"
-                :main server.main/main!}}}
+ :builds {:server {:target :node-script
+                   :output-to "node-target/core.js"
+                   :main server.core/start-server!}
+          :client {:target :browser
+                   :output-dir "resources/public/js"      
+                   :modules {:core {:init-fn client.core/start-client!}}}}}
