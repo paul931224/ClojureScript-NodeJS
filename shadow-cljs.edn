@@ -8,5 +8,5 @@
                    :output-to "node-target/core.js"
                    :main server.core/start-server!}
           :client {:target :browser
-                   :output-dir "resources/public/js"      
+                   :output-dir "public/js"      
                    :modules {:core {:init-fn client.core/start-client!}}}}}

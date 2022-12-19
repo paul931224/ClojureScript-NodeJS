@@ -28,28 +28,38 @@
 (defn handle-request [req res]
   (.send res (wrapper/render-page (.-path req))))
 
+
+(def router 
+  {"/"      handle-request
+   "/hello" (fn [req res]  (.send res  hello-text))
+   "/mapv"  (fn [req res]  (.send res (map-products)))})
+
+
+(defn generate-get-route [app route handler]
+  ;; Like (app.get("/" function(req, res))
+  (.get app route handler))
+
 (defn start-server []
   (println "Starting server")
   (let [app (express)]
-    (.get app "/"       handle-request)
-    (.get app "/hello"  (fn [req res]  (.send res  hello-text)))
-    (.get app "/mapv"   (fn [req res]  (.send res (map-products))))
-    (.use app (express/static "resources/public"))
+    (doseq [[route handler] router]
+      (println route)
+      (generate-get-route app route handler))
+    (.use app (express/static "public"))
     (.listen app port   (fn [] (println "Example app listening on port " port)))))
  
 
 (defn ^:dev/before-load stop! []
-  (println "Code updated before.")
+  (println "Before code updated")
   (when @server (.close @server)))
   
 
 (defn ^:dev/after-load start! []
-  (println "Code updated after.")
+  (println "After code updated")
   (reset! server (start-server)))
 
 
 (defn start-server! []
-  (println "Omg mate it's working")
   (start!))
 
   
