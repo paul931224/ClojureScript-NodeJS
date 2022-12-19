@@ -4,3 +4,6 @@ target/
 /yarn.lock
 .shadow-cljs/
 .nrepl-port
+package-lock.json
+.clj-kondo
+.lsp
