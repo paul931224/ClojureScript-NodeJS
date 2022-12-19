@@ -1,5 +1,5 @@
 
-{:source-paths ["src"]
+{:source-paths ["source-code"]
  :dependencies []
  :builds {:server {:target :node-script
                    :output-to "node-target/core.js"

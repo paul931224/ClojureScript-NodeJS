@@ -2,7 +2,6 @@
 (ns server.core
   (:require ["express" :as express]))
 
-
 (defonce server (atom nil))
 
 (def port 3000)
@@ -29,6 +28,7 @@
     (.get app "/"       (fn [req res]  (.send res index-text)))
     (.get app "/hello"  (fn [req res]  (.send res  hello-text)))
     (.get app "/mapv"   (fn [req res]  (.send res (map-products))))
+    (.use app (express/static "resources/public"))
     (.listen app port   (fn [] (println "Example app listening on port " port)))))
  
 
