@@ -17,6 +17,8 @@
     "ws": "^7.3.0"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

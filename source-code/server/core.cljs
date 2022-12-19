@@ -1,6 +1,7 @@
 
 (ns server.core
-  (:require ["express" :as express]))
+  (:require ["express" :as express]
+            [server.templates :as templates]))
 
 (defonce server (atom nil))
 
@@ -22,10 +23,14 @@
    " - Total-price: "
    (reduce + (map :price products))))
 
+
+(defn handle-request [req res]
+  (.send res (templates/render-page (.-path req))))
+
 (defn start-server []
   (println "Starting server")
   (let [app (express)]
-    (.get app "/"       (fn [req res]  (.send res index-text)))
+    (.get app "/"       handle-request)
     (.get app "/hello"  (fn [req res]  (.send res  hello-text)))
     (.get app "/mapv"   (fn [req res]  (.send res (map-products))))
     (.use app (express/static "resources/public"))

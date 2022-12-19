@@ -1,6 +1,8 @@
 
 {:source-paths ["source-code"]
- :dependencies []
+ :dependencies [[reagent "1.1.1"]
+                [clj-commons/secretary "1.2.4"]
+                [kibu/pushy "0.3.8"]]
  :builds {:server {:target :node-script
                    :output-to "node-target/core.js"
                    :main server.core/start-server!}
