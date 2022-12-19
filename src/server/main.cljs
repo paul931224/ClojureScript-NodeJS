@@ -5,6 +5,8 @@
 
 (defonce server (atom nil))
 
+(def port 3000)
+
 (def index-text "Index")
 
 (def hello-text "Hello there D3V!")
@@ -27,7 +29,7 @@
     (.get app "/"       (fn [req res]  (.send res index-text)))
     (.get app "/hello"  (fn [req res]  (.send res  hello-text)))
     (.get app "/mapv"   (fn [req res]  (.send res (map-products))))
-    (.listen app 3000   (fn [] (println "Example app listening on port 3000!")))))
+    (.listen app port   (fn [] (println "Example app listening on port " port)))))
  
 
 (defn ^:dev/before-load stop! []
@@ -36,7 +38,7 @@
   
 
 (defn ^:dev/after-load start! []
-  (println "Code updated after.") ;index-text) 
+  (println "Code updated after.")
   (reset! server (start-server)))
 
 (defn main! []
