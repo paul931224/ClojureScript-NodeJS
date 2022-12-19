@@ -1,7 +1,8 @@
 
 (ns server.core
   (:require ["express" :as express]
-            [server.templates :as templates]))
+            [server.wrapper :as wrapper]))
+          
 
 (defonce server (atom nil))
 
@@ -18,14 +19,14 @@
 
 (defn map-products []
   (str
-   "Products: "
+   "Products  : "
    (mapv :name products) 
-   " - Total-price: "
+   " - Total - price: "
    (reduce + (map :price products))))
 
 
 (defn handle-request [req res]
-  (.send res (templates/render-page (.-path req))))
+  (.send res (wrapper/render-page (.-path req))))
 
 (defn start-server []
   (println "Starting server")

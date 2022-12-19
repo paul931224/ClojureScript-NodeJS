@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "shadow-cljs watch app",
-    "compile": "shadow-cljs compile app",
-    "build": "shadow-cljs release app"
+    "watch-server": "shadow-cljs watch server",
+    "compile-server": "shadow-cljs compile server",
+    "build-server": "shadow-cljs release server",
+    "watch-client": "shadow-cljs watch client",
+    "compile-client": "shadow-cljs compile client",
+    "build-client": "shadow-cljs release client",
+    "watch-both": "concurrently \"yarn watch-server\" \"yarn watch-client\""
   },
   "keywords": [],
   "author": "jiyinyiyong",
@@ -17,6 +21,7 @@
     "ws": "^7.3.0"
   },
   "dependencies": {
+    "concurrently": "^7.6.0",
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
