@@ -1,12 +1,12 @@
-(ns backend.wrapper
+(ns backend.html
   (:require [reagent.dom.server :as reagent-dom]
             [secretary.core :as secretary :refer-macros [defroute]]
-            [app.core  :as app]))
+            [app.core  :as app]
+            [config   :refer [version]]))
           
 
 (enable-console-print!)
 
-(def version 0.1)
 
 (defn with-version [url]
   (str url "?version=" version))
@@ -24,7 +24,7 @@
    [:body
     [:div#app [body]]
     
-    [:script {:type "text/javascript" :src (with-version "js/core.js")}]]])
+    [:script {:type "text/javascript" :src (with-version "/js/core.js")}]]])
     
 
 
