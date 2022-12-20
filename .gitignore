@@ -10,3 +10,4 @@ package-lock.json
 .DS_Store
 resources/frontend/js
 resources/backend/core.js
+resources/backend/core.js

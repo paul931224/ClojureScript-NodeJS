@@ -8,9 +8,9 @@
   [config]
   (server/stop!)
   (server/start!)
-  (shadow/watch :server)
-  (shadow/watch :client) 
-  (println "Watching :client and :server with shadow-cljs")
+  (shadow/watch :backend)
+  (shadow/watch :frontend) 
+  (println "Watching :backend and :frontend with shadow-cljs")
   (let [stream (-> (process "ls") :out)]
     @(process {:in stream
                :out :inherit} "node resources/backend/core.js")

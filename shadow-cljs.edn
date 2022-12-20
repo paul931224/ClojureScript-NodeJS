@@ -1,8 +1,9 @@
 
 {:source-paths ["source-code"]
- :builds {:server {:target :node-script
-                   :output-to "resources/backend/core.js"
-                   :main backend.core/start!}
-          :client {:target :browser
-                   :output-dir "resources/frontend/js"      
-                   :modules {:core {:init-fn frontend.core/start!}}}}}
+ :dependencies [[cider/cider-nrepl "0.21.1"]]
+ :builds {:backend {:target :node-script
+                    :output-to "resources/backend/core.js"
+                    :main backend.core/start!}                    
+          :frontend {:target :browser                     
+                     :output-dir "resources/frontend/js"      
+                     :modules {:core {:init-fn frontend.core/start!}}}}}
