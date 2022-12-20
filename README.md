@@ -7,15 +7,10 @@ Node.js example for [shadow-cljs](https://github.com/thheller/shadow-cljs)
 Watch compile with with hot reloading:
 
 ```bash
-yarn
-yarn shadow-cljs watch app
+npm install
+clj -X:dev
 ```
 
-Start program:
-
-```bash
-node target/main.js
-```
 
 ### CALVA
 
@@ -23,7 +18,7 @@ node target/main.js
 2. Connecting to a running REPL server in the ...
 3. Choose shadow-cljs
 4. Use automatic port, or copy from shadow-cljs watch output
-5. Choose `:node-repl`
+5. Choose `:node-repl` or `:app`
 6. `Ctrl + Enter` to run function inline.
 7. Enjoy.
 

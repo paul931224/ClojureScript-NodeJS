@@ -1,16 +1,12 @@
 
 node_modules/
-target/
-/yarn.lock
 .shadow-cljs/
 .nrepl-port
 package-lock.json
 .clj-kondo
 .lsp
 .calva
-node-target
-resources/public/js/cljs-runtime
-resources/public/js
-public/js
 .cpcache
 .DS_Store
+resources/frontend/js
+resources/backend/core.js

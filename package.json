@@ -1,27 +1,16 @@
 {
-  "name": "minimal-shadow-cljs-nodejs",
+  "name": "nodejs-clojure-fullstack-template",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "watch-server": "shadow-cljs watch server",
-    "compile-server": "shadow-cljs compile server",
-    "build-server": "shadow-cljs release server",
-    "watch-client": "shadow-cljs watch client",
-    "compile-client": "shadow-cljs compile client",
-    "build-client": "shadow-cljs release client",
-    "watch-both": "concurrently \"yarn watch-server\" \"yarn watch-client\""
-  },
   "keywords": [],
-  "author": "jiyinyiyong",
+  "author": "paulcristian",
   "license": "MIT",
   "devDependencies": {
     "shadow-cljs": "^2.10.12",
     "source-map-support": "^0.5.19",
     "ws": "^7.3.0"
   },
-  "dependencies": {
-    "concurrently": "^7.6.0",
+  "dependencies": {   
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

@@ -1,11 +1,9 @@
-(ns genesis.watch
+(ns watch
   (:require
    [shadow.cljs.devtools.server :as server]
    [shadow.cljs.devtools.api    :as shadow]
-   [clojure.java.shell                          :as shell]
-   [babashka.process :refer [process check]]))
+   [babashka.process :refer [process]]))
   
-
 (defn watch
   [config]
   (server/stop!)
@@ -15,6 +13,6 @@
   (println "Watching :client and :server with shadow-cljs")
   (let [stream (-> (process "ls") :out)]
     @(process {:in stream
-               :out :inherit} "node node-target/core.js")
+               :out :inherit} "node resources/backend/core.js")
     nil))
   

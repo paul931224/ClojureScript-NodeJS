@@ -1,8 +1,8 @@
 
 {:source-paths ["source-code"]
  :builds {:server {:target :node-script
-                   :output-to "node-target/core.js"
-                   :main server.core/start-server!}
+                   :output-to "resources/backend/core.js"
+                   :main backend.core/start!}
           :client {:target :browser
-                   :output-dir "public/js"      
-                   :modules {:core {:init-fn client.core/start-client!}}}}}
+                   :output-dir "resources/frontend/js"      
+                   :modules {:core {:init-fn frontend.core/start!}}}}}

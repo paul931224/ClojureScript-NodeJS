@@ -1,4 +1,4 @@
-(ns server.wrapper
+(ns backend.wrapper
   (:require [reagent.dom.server :as reagent-dom]
             [secretary.core :as secretary :refer-macros [defroute]]
             [app.core  :as app]))

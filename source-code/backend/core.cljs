@@ -1,7 +1,7 @@
 
-(ns server.core
+(ns backend.core
   (:require ["express" :as express]
-            [server.wrapper :as wrapper]))
+            [backend.wrapper :as wrapper]))
           
 
 (defonce server (atom nil))
@@ -43,7 +43,7 @@
   (let [app (express)]
     (doseq [[route handler] router]
       (generate-get-route app route handler))
-    (.use app (express/static "public"))
+    (.use app (express/static "resorces/frontend"))
     (.listen app port   
              (fn [] (println "Port: " port)))))
  
@@ -51,13 +51,10 @@
 (defn ^:dev/before-load stop! []  
   (when @server (.close @server))) 
   
-
+ 
 (defn ^:dev/after-load start! []
   (println "Code updated.")
   (reset! server (start-server)))
 
-
-(defn start-server! []
-  (start!))
 
   
