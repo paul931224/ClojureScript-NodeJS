@@ -1,4 +1,4 @@
-(ns app.core
+(ns frontend.home
   (:require [reagent.core :as reagent :refer [atom]]
             [secretary.core :as secretary :refer-macros [defroute]]))
 
@@ -8,13 +8,13 @@
   [:div [:a {:href "/"} "Home Page"]
    [:span {:style {:padding "5px"}}]
    [:a {:href "/page-one"} "Page One"]
-   [:span {:style {:padding "5px"}}] 
+   [:span {:style {:padding "5px"}}]
    [:a {:href "#" :on-click #(js/alert "HEY, I WORK!!")} "Say Hello"]])
 
 (defn home-page []
-  [:div  
+  [:div
    [navigation]
-   [:h1 "Home Page"]])
+   [:h1 "dsaa Page"]])
 
 (defn page-one []
   [:div [navigation] [:h1 "Page One"]])

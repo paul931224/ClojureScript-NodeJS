@@ -11,3 +11,4 @@ package-lock.json
 resources/frontend/js
 resources/backend/core.js
 resources/backend/core.js
+prod

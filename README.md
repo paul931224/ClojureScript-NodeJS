@@ -6,7 +6,7 @@ Node.js example for [shadow-cljs](https://github.com/thheller/shadow-cljs)
 
 Watch & compile with with hot reloading:
 
-```bash
+```
 npm install
 clj -X:dev
 ```
@@ -25,7 +25,7 @@ clj -X:dev
 
 ### Build
 
-```bash
-Still in the making...
+```
+clj -X:prod
 ```
 
